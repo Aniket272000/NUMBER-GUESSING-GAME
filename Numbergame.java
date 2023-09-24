@@ -8,28 +8,28 @@ public class Numbergame {
         Scanner scanner = new Scanner(System.in);
         Random random = new Random();
         
-        int lowerLimit = 1;
-        int upperLimit = 20;
-        int maxAttempts = 10;
+        int lowerLimit = 15;
+        int upperLimit = 50;
+        int maxattempts = 7;
         int roundsWon = 0;
         
-        System.out.println("Welcome to the Guessing Game!");
+        System.out.println("ALL THE BEST AND ENJOY YOUR NUMBER GUESSING GAME!");
 
         while (true) {
             int secretNumber = random.nextInt(upperLimit - lowerLimit + 1) + lowerLimit;
             int attempts = 0;
 
             System.out.println("\nNew Round!");
-            System.out.println("You have " + maxAttempts + " attempts.");
+            System.out.println("You have " + maxattempts + " attempts.");
 
-            while (attempts < maxAttempts) {
+            while (attempts < maxattempts) {
                 System.out.print("Guess the number between " + lowerLimit + " and " + upperLimit + ": ");
-                int userGuess = scanner.nextInt();
+                int usernum = scanner.nextInt();
                 attempts++;
 
-                if (userGuess < secretNumber) {
+                if (usernum < secretNumber) {
                     System.out.println("Too low! Try again.");
-                } else if (userGuess > secretNumber) {
+                } else if (usernum > secretNumber) {
                     System.out.println("Too high! Try again.");
                 } else {
                     System.out.println("Congratulations! You guessed the correct number, which is " + secretNumber + ".");
@@ -38,7 +38,7 @@ public class Numbergame {
                 }
             }
 
-            if (attempts >= maxAttempts) {
+            if (attempts >= maxattempts) {
                 System.out.println("\nYou've run out of attempts. The secret number was " + secretNumber + ".");
             }
 
